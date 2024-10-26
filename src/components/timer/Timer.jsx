@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-
+import "./timer.css"
 export default function timer() {
     const [time, setTime] = useState(0)
     const [isRunning, setIsRunning] = useState(false)
@@ -10,11 +10,11 @@ export default function timer() {
             return () => clearInterval(interval)
         }
     }, [isRunning])
-  return (
-    <div>
-        <h1>{time}</h1>
-        <button onClick={() => setIsRunning(!isRunning)}>{isRunning ? "Pause" : "Start"}</button>
-        <button onClick={() => {setIsRunning(false); setTime(0)}}>Reset</button>
-    </div>
-  )
+    return (
+      <div className='timmer'>
+          <h1 className='time'>{time}s</h1>
+          <button className='start' onClick={() => setIsRunning(!isRunning)}>{isRunning ? "Pause" : "Start"}</button>
+          <button className='reset' onClick={() => {setIsRunning(false); setTime(0)}}>Reset</button>
+      </div>
+    )
 }

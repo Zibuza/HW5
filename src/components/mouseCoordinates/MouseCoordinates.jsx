@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./mouseCoordinates.css"
 export default function MoueCoordinates() {
   const [cords, setCords] = useState({ x: 0, y: 0 });
 
@@ -12,7 +12,7 @@ export default function MoueCoordinates() {
     
 
   return(
-    <div>
+    <div className="coordinates">
         <h1>Mouse Coordinates</h1>
         <p>x: {cords.x}</p>
         <p>y: {cords.y}</p>
